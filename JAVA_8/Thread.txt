@@ -1,0 +1,50 @@
+1)diff btw wait and sleep
+->sleep()
+	belongs to Thread Class
+	keep the hold on the lock
+	it will completes its time span specificed
+	static method
+	sleep(long millis);sleep(long millis,int nanos)
+	no need of sunchronized context
+  wait()
+	belongs to Object Class
+	releases the hold
+	it can completes its time span until notified
+	non static method
+	wait();wait(long millis);wait(long millis,int nanos)
+	should be called from synchronized context otherwise IllegalMonitorStateException
+	
+2)What is the difference between processes and threads?
+->process:
+	An instance of program
+	heavy weight
+	independent menory
+  thread
+	subset of program
+	light weight
+	shared memory
+
+3)Differences Between Lock API and Synchronized Block
+	1)lock and unlock operation can be done from separate methods.Unlike synchronized block which is present inside a single method.
+	2)trylock enable thread to avoid getting blocked when other thread has a hold on the lock
+	3)Based on condition we can make the thread to enter wait state(Condition interface)
+	4)Lock provides fair lock management.It can allow long waiting thread to aquire lock
+
+4)What are some of the improvements in Concurrency API in Java 8?
+->ConcurrentHashMap compute(), forEach(), forEachEntry(), forEachKey(), forEachValue(), merge(), reduce() and 
+search() methods.
+CompletableFuture that may be explicitly completed (setting its value and status).
+Executors newWorkStealingPool() method to create a work-stealing thread pool using all available processors as its target parallelism level.
+
+5)diff btw Collection.synchronizedList() and CopyOnWriteArrayList
+
+
+
+ Write a program that will result in a deadlock. How will you fix deadlock in Java?
+ How can we implement Producer-Consumer problem using Blocking Queue?
+ 
+
+
+
+
+
