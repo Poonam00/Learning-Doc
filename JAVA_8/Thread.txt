@@ -37,6 +37,25 @@ CompletableFuture that may be explicitly completed (setting its value and status
 Executors newWorkStealingPool() method to create a work-stealing thread pool using all available processors as its target parallelism level.
 
 5)diff btw Collection.synchronizedList() and CopyOnWriteArrayList
+->Synchronized list:
+	java.util.Collections
+	lock on entire list-multithread cannot read/write simultaneously
+	ideal for single threaded environment
+	give ConcurrentModificationException on adding/removal of elements on iteration
+	
+  COWAL:
+  	java.util.concurrent
+	new copy of list is created on write operation
+	ideal for multi threaded environment
+	does not give ConcurrentModificationException on iteration
+	
+6)New features introduced in java 7
+->1)NIO
+  2)try-with-resource
+  3)multiException catch block
+  4)diamond operator
+  5)string in switch case
+  6)Fork-Join Pool
 
 
 
