@@ -1,0 +1,53 @@
+latest Version:
+Spring 5.x
+Springbboot 2.x
+Java 14
+
+Java Virtual Machine(JVM) is part of Java Runtime Environment(JRE). JVM is where the compiled byte code executes(runs). JVM sometimes contains a Just in time compiler(JIT) whose job is to convert byte code to native machine code
+*JIT is a part of JVM to improve the speed of JVM to execute code
+*JVM converts source code to byte code whereas JIT convert bytecode to machine code
+*JIT is a combination of interpretter and compiler
+*First it act as interpretter,While interpretting each line of code,it come across hot code(code which is called again and again) and monitors it,as soon it reaches its threshold point ,it compiles the same piece of code rather than interpretting again and again
+
+
+
+when the class is package the name of the class need not be same as name of the file.But it is important in public class
+System.out.println=>out is PrintStream datatype
+
+
+(Open connect id)Authentication: Process of checking the user, who they claim to be.
+(OAuth2.0)Authorization: Process of deciding whether an user is allowed to perform an activity within the application.
+
+org.springframework.web.filter.DelegatingFilterProxy: responsible in spring security
+Authentication model
+1.LDAP
+2.OAuth2
+3.SAML
+4.OpenConnectID
+
+Symmetric(AES) and Asymmetric(RSA) Encryption Algorithms.
+
+Lazy Intialization: Beans are created when needed instead of during application start up
+
+JWT=header.payload.signature
+openid connect =the resourse server does not interacts with auth server
+JWK=key used in JWT signature
+JWS=Signature,one of its type is JWT
+JWE=Encryption
+JWKs=Key set conating key(public key) JWK and its kid.Provided by Auth Server
+JWA (JSON Web Algorithm)
+JSON Web Token (JWT) or JOT is a Standard way (RFC 7919)of passing the information between different parties in the form of JSON we can Sign or Encrypt it if we sign the JWT it called JSON Web Signature (JWS) and If we Encrypt it become JSON Web Encryption (JWE) we can also Sign and Encrypt the JWT and then we call it JSON Object Signing and Encryption (JOSE)
+
+
+End user will first login 
+Request will go to authentication server which provide the JWT
+	JWT have public key used for encryption
+The JWKs will be provided prior to the Resource Server.
+The private key is with Authentication server which is never shared.
+
+The same JWT will travel to Resource server which will decrypt the payload using the kid and public key provided in JWKs
+
+OpenID connect=even user credentials is managed by auth server
+oAuth=third party involvement for Authentication
+
+@EnableResourceServer annotation means that your service expects an access token in order to process the request. Access token should be obtained from Authorization Server by OAuth 2.0 Client before calling the Resource Server.

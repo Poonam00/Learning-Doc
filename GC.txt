@@ -1,0 +1,30 @@
+Garbage Collection:
+GC is a daemon thread run by JVM
+It follows Mark-Sweep Model
+	Mark the used/referenced object and rest is considered garbage
+	Sweep accross the heap memory to identify unsed space and add it into free list
+Garbage Roots:
+The root object to which other objects are connected and are accessible outside the heap are called GC roots
+
+Before cleanup, GC thread will call finalize()
+GC thread will call finalize method of the object only once.
+finalize() is marked protected so that only instance of this class and its subclass can call finalize()
+finalize() are generally overrided to perform clean up process
+Object class finalize() implementation is empty,the subtype will override it
+Object.finalize() is deprecated in Java 9 instead Phantom references is used
+If we dont override the finalize method not a issue. These object will cleaned when they become unreferenced.
+
+System.gc() / Runtime.getRuntime().gc() can be used to suggest the JVM to invoke GC
+Ther may be a change of memory leak due to accumulation of unused but still referenced objects
+
+
+Cases where objects become unreachable:
+Case 1: nullify the object
+Case 2: objects created inside methods
+Case 3:Anonymous object
+Case 4:Re-assigning the reference variable(when one var is assigned to other var)
+
+**In java 8 metespace concept has enaled us to overcome memory leak.
+Metaspace has replaced permGen memory in heap which grows as the demand for space increases
+Through metaspace we can customize the memory space
+When max metaspace limit is reached,cleanup takes place

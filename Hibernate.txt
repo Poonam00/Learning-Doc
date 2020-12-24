@@ -1,0 +1,65 @@
+1)mapping
+	1.@OneToOne
+	2.@OneToMany
+	3.@ManyToOne
+	4.@ManyToMany
+	
+1)Hibernate supports both eager and lazy loading
+**Also note that @OneToMany and @ManyToMany associations are defaulted to LAZY loading; and @OneToOne and @ManyToOne are defaulted to EAGER loading.
+We can change this as
+@OneToMany(  fetch = FetchType.LAZY )
+
+
+2)get() vs load()
+->	load() creates proxies of the entity object with no states initialized
+	later when we try to get data from proxy Excepion might occur
+	
+	Employee employee1 = session.load(Employee.class,20);  //Step-1
+	system.out.println(employee1.getEmployeeId();       //Step-2  --o/p=20
+	system.out.println(employee1.getEmployeeName();       //Step-3 -->O/P:ObjectNotFoundException
+	
+	no db hit in step 1 and 2,however in step 3 sql query executed but record does not exis,gives ObjectNotFoundException
+	
+		Employee employee2 = session.load(Employee.class,20);  //Step-1
+		return null id record does not exist
+		direct sql query executed in db rightaway
+  get().
+		->get the entity object mapped from row
+		->return null if obj not present
+		->fast
+		->direct conn with db
+  load
+		->give proxies on the entity obj
+		->gives ObjectNotFound if recorn doesnt exist
+		->slow 
+		->no direct contact with db
+3)Caching
+->
+1st level caching->linked with session
+2nd level caching->linked with session factory
+Query caching->linked with parameter in query
+
+4)session is thread unsafe but session factory is thread safe
+
+
+SessionFactory:
+They are thread safe.It is created during application startup. One SessionFactory is used for one database using a configuration file. If multiple databases connections are required we need to create multiple session factory
+it has a optional 2nd level of caching with the sessionFactory
+
+Session:
+Used to get a physical conncetion with a database.It is instantiated each time a connection is needed
+Session provide 1st level of caching which is by default in hibernate
+
+transient:
+object which is not associated with a session
+
+persistent:
+object associated with session and its representation/schema is present in the database. 
+Persistent object should have a no-arg constructor for Reflection and proxies
+should have a unique id
+all fields shoud be marked private and have getter and setters
+
+
+
+detached:
+Once the session is closed the persistent objects become detached. 

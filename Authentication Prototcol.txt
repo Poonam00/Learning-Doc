@@ -1,0 +1,24 @@
+LDAP(LightWeight Directory Access Protocol)
+It validates a username and password from its LDAP directory.An LDAP directory is a NoSQL type database.
+
+Oauth 2
+OAuth 2.0 is an authorization framework
+It provide thridy pary for authentication,like google,facebook etc(are called Identity provider)
+Resource server interacts with Auth server
+
+SAML(Security Assertion Markup Language)
+XML based
+
+OpenID Connect(Authentication)
+OpenID Connect uses the JSON Web Token (JWT) and JSON Object Signing and Encryption (JOSE) specifications.
+Third party system - usually called an Identity Provider (IdP)which handles the authentication process and returns an Access Token representing success. 
+built on top of Oauth2
+Features:
+validate EndUser
+provides encryption
+Session management
+OpenID Connect uses the JSON Web Token (JWT) and JSON Object Signing and Encryption (JOSE) specifications.
+
+authorization =what all can access
+(Authentication)=who can access
+

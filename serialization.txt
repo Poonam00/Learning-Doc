@@ -1,0 +1,18 @@
+FluentD
+ribbon
+histerix
+springconfigserver
+spring eureka service registry
+spring gateway
+
+Serializable is a marker interface which indicate the JVM to serialize the object.
+To override the functionality of Serialization we can override readObject(), writeObject() or use Externalizable which itself have two method readExternal() and writeExternal()
+
+serialVersionUID is used to maintain the version of serialized object.
+It is by default the hashcode of the object. So if we make any changes to the Serializable class, the deseralization will give java.io.InvalidClassException due to mismatch of uid/hashcode of serialized class 
+
+We should give our unique serialVersionUID to avoid the exception. If the serialVersionUID is not changed even after changing the states/variables, deseralization will not cause issue.
+
+‘NotSerializableException’ will be thrown at runtime if instance object are not serialized
+
+Deserialising an child class which implements Serializable but its parent class is non-Serializable, will call constructor chainng and initialize(0/null) to the parent states/variables

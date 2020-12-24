@@ -1,0 +1,68 @@
+OSI(Open System Interconnect) Model=>7 Layers
+TCP/IP(Transmission Control Protocol/Internet Protocol)=>5 layers
+	1.Application(SMTP/FTP/HTTP)
+	2.Transport
+	3.Network(Telnet)
+	4.Datalink
+	5.Physical 
+
+Http
+	is a communication protocol for www
+	Version: HTTP/1.1 and HTTP/2
+	GET, PUT, POST, DELETE, HEAD,TRACE,OPTION
+	Polling: a technique by which the client asking the server for new data regularly
+		Two Types:
+		1:HTTP Short Polling: 
+			*Client send request on reqular interval and get the response immediately
+			*Frequency is more
+			*Response can be empty handed
+			*Ex:Ajax call
+		2.HTTP Long Polling: 
+			*Client send request ,Server holds req open until resources is availabe 
+			*Frequency is less
+			*response with resource
+			*Twitter:whenever new data is available,server will push data to client
+
+HTTPS
+	is the secure version of HTTP
+	It uses SSL/TLS for secure encrypted communications
+
+HTTP/2
+	upgrade header:switch to HTTP
+	websocket
+	not all browser/or platform supports this
+
+Http Streaming
+	a push-style data transfer technique 
+	First connection will be set from Client side to the server
+	server continuously send data to a client over a single open HTTP connection
+	Disadvantage:While streaming of data from server there may be intermediatries(network/firewall) issues,then again the connection has to be established by 	client
+	Ex: Video/audio streaming
+	 
+Websocket:
+	Http should be upgraded to HTTP/2
+	For bidirectional/multiplexed communication(two way communication)
+	Socket(interface/port) for web(clent -server)
+	Ex: Chat-based,notification,games
+
+Webhook:
+	the communication generally happens between servers
+	First, the sender node registers a callback URL in the receiver node/s in advance. When an event occurs in the sender side, the webhook gets triggered and 		sends an event object with new data as a HTTP POST request to the receiver node/s using callback URLs registered in each of them.
+
+Proxy Server:
+	Its a gateway between client and server.
+	All the traffic from client flows through proxy server to the server and vice versa
+	Ex apache httpd .nginix
+
+REST(REpresentational State Transfer)
+	REST is a architectural style for web services
+	It adheres to few Constraints such as:
+		Separation of Client-Server(Implementation of client is independent from implementation of server.One need not to know the code of other)
+		Cacheable(The client, the server and any intermediary components can all cache resources in order to improve performance)
+		Uniform Interface
+		StateLessness
+	The APIs adhering to REST principles are called RESTful APIs
+	RESTful APIs uses HTTP as its transport protocol
+	GET, PUT, POST, and DELETE method support
+	Eventhough REST Api is stateless but the name has Representational State Transfer.
+	This is because using Rest Api we transfer resource/states from server to client in a presentable manner i.e json/html etc

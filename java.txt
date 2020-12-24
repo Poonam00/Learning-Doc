@@ -1,0 +1,39 @@
+1)Singleton:
+->Lazy loading
+private constructor
+double null check block with synchronized block,
+volatile(to make lazy loading atomic,utilize jmm) so that two thread cannot cache the instance in their local memory
+Singleton can still be broken by:
+	1. Reflection:
+		still loophole for lazy loading
+		Avoidance: throw Runtime Exception from private constructor.
+	2. Cloning
+		override clone(). Either return same instance or throw exception
+	3. Deserializable
+		While deserializing readObject() is called which internally call readResolve().
+		Override readResolve().Either return same instance or throw exception
+
+2)CopyOnWriteArraySet
+->Internally it uses CopyOnWriteArrayList which implements Set for unique elements
+Fail safe iterator
+
+3)IntegerCache
+->Like Stringconstantpool, integer also have integer cache to store Integer Object of range -128 to 127 because the value used in this range are most comonly used
+thus.same object will be returned if already stored in integercache
+we also have ByteCache, ShortCache, LongCache, CharacterCache for Byte, Short, Long, Character respectively.
+
+4)Immutable:
+-> class final
+states private final
+initialize states in public constructor;
+only getters no setters
+override toString(),hashcode(),equals()
+For Mutable state. create new object ,avoid data leakage
+For list, use  Collections.unmodifiableList().
+
+5)map.put(key, value): returns null if key not found else the previous value if key already present
+set.add(key): return boolean, true if key not present and add key, false if already present and does not replace
+
+6)Intern:
+->String constant pool also called as String intern pool store String literals
+intern(): can be used to add String object from heap to inten pool if already not exist.If already exist return address of constant pool string

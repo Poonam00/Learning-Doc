@@ -1,0 +1,25 @@
+master]git merge test
+git branch test -d
+git branch test -D	//(to force deletion)
+git push origin --delete <branch_name>//to push above delete command
+git log	//shows all previous commits,shows commit id witrh each commit message
+git revert <commitId>
+git branch -m old_branch new_branch//rename a branch
+git push origin :old_branch new_branch//delete old branch,but new branch is empty(careful)
+
+#merge request
+commit all the changes to a branch say dev
+git checkout master//go to master branch
+git merge dev
+git push origin master
+
+
+upload your project to github
+click on + button after login,and click new Repository,provide reposotiory name,create repository
+open git bash inside pour project
+git remote add origin <repo url>.git
+git push -u  origin master
+username:
+password:
+
+

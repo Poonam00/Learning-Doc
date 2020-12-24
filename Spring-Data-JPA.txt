@@ -1,0 +1,29 @@
+Exception Handling:
+Controller Level //@ExceptionHandler
+	If a Controller is throwing any exception then in that class itself create amethod for @ExceptionHandler(Exception.class)
+	which will handle the exceptionof this controller class
+	The @ExceptionHandler is an annotation used to handle the specific exceptions and sending the custom responses to the client.
+Project Level	//@ControllerAdive
+	For global level,Create a class with annotation @ControllerAdive and provide a method with @ExceptionHandler
+	have one of your controller methods throw an exception
+	catch that exception in the controller using @ExceptionHandler
+	catch the exception using Controller Advice
+In our project we can create a custom exception which extends any exception.In our service classes we can put a try catch and throw a paticular exception in catch,
+which will eventually go to the @ControllerAdive and particular @ExceptionHandler
+
+H2 DB:
+it is an in-memeory DB that can be integrated in the spring boot application itself.
+Steps for intergration:
+1)while downloading SB app select db h2 dependency also
+2)in application.properties put
+	spring.h2.console.enabled=true
+	spring.h2.console.path=/console
+3)Run your app
+we can view the DB by using complete url of the app then adding the uri/console,we need to loging,without password and then we can view H2 database from our browser
+
+
+Spring-Data-JPA"
+1.To enable auditing on tables i.e Spring JPA automatically update CreatedBy, CreatedDate, LastModifiedBy, LastModifiedDate properties.
+->1)In EntityClass use @CreatedBy on the property
+  2)Above EntityClass put @EntityListeners(AuditingEntityListener.class)
+  3)In the DAO class put @EnableJpaAuditing

@@ -1,0 +1,24 @@
+SAGA pattern for consistency of data in microservice (Database per service pattern)
+
+SAGA is a sequence of local transactions among multiple microservices modules for a single business transaction
+Like ordering a product can have mulple processes underneath like confirming order,reducing count from product inverntory, making payment, triggering a mail to customer on confirmation.
+Similarly if a local transaction fails due to some business failure then a rollback saga series needs to be executed.
+
+Two ways in which SAGA can be implemented
+1) Choreography
+2) Orchestration
+
+Authorization using oAuth2
+
+
+Api Gatway: 
+Netflix Eureka : Service Registry
+Ribbon : client side load balancer
+Hystrix: circuit breaker, to give a fallback method in case of a failure
+
+
+Event sourcing/Messaging Service
+Topic : brodcasting of messages(one to many)(Kafka): best for two communication
+QUEUE : one to one messaging
+
+(RabbitMQ provided both functionality)

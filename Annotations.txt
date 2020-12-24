@@ -1,0 +1,34 @@
+Annotations
+@RestController//write response(text/JSOn/XML) to http response body instead of returning view as @Controller==writes a view in response
+@RequestMapping//map method to the url
+@SpringBootApplication
+@Configuration//this class and its bean object is managed by AC
+@EnableAutoConfiguration
+@ComponentScan//scan the components within this package
+@Bean//whenever a method return an object we can put @Bean on top of it.Provided(@configuration has to be there on top of the class where this method is present).We can use this bean using a)ctx.getBean("user");		2)@Autowire User user;in other class
+@Value("${var}")//field injection ,primitive type
+@ConfigurationProperties(prefix="employee")	//instead of putting @Value on each variable we can use this annotation.It maps based on the prefix and variablename in pojo class
+@EnableConfigurationProperties//To enable @ConfigurationProperties we need to tell AC to maintain it by putting this annotation in main class
+@Profile("development")	//generally with @Bean;the bean returned be used if it matches the active profile in application.properties.If we have multiple @Bean with diff @Profile,all bean obj will be created
+@PathVariable(value="slug")// for RequestMapping("/get/{slug}").We can get the value of slug which is a URI
+@Entity//this class is a JPA persistent model like Employee Class//its a domain class
+@Id// this variable is a primary key
+@GeneratedValue//use underlying DB to create the sequencing of the tuple/object
+@ManyToOne//this variableobject can belong to multiple other object .like in Post class we can have @ManyToOne Author.Many Posts to one Author.Due to this anotation AUTHOR_ID which have the foreign key id of author is created automativally
+@OneToMany(mappedBy="author")//One Author can have mapy posts
+private List<Posts> posts;//this author can have multiple no of posts
+@CreatedDate//jpa will automatically insert cureent timestamp in column,instead of us providing
+@Column(columnDefinition="TEXT")//customizing the datatype of DB column
+@PostConstruct//the method will be executed only after this class all beans are created/ is set up
+@Repository
+@Query//we can provide query string here
+
+DOUBT:
+1.try@Bean annotaion,ctx.getBean("user").What is user.method name or class name?
+2.diff btw Requestmapping above RestController,RequestMapping above methodname and url path in application.properties
+
+Practise:
+1)Exception handling
+try catch in service/controller class and handle by @ControllerAdvice
+2)H2-db,CrudRepository
+connect to h2 and create entity & JPA crud

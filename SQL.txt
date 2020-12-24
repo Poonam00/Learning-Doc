@@ -1,0 +1,119 @@
+Read Problems
+	1.Dirty reads:transaction A reads a uncommited data of transaction B. Trans B has rolled back its data
+	2.non-repeatable read: occurs when a transaction reads same row twice, and get a different value each time .inbetween another trans might have done changes
+	3.phantom read:When a range query is executed.produces different no. of rows each time.Another trans might have added/removed rows.
+*Subset of SQL
+=> DDL(Create,alter,drop),DML(update,insert,delete),DCL(admin control like access )
+
+*Database Management System (DBMS)
+=> is a interface between user and the database to retrive,modify,insert data in database
+Two Types:
+1)RDBMS:Relational DBMS like MySQL,Oracle,PosGres
+2)Non RDBMS: Non-Relational DBMS like Mongodb
+
+*Joins
+=>JOIN clause is used to combine multiple tables based on related column between them
+1)Inner Join
+2)Right Join
+3)Left Join
+4)Full Join
+http://www.sql-join.com/sql-join-types
+
+*Diff between Delete, Drop and Truncate
+=>Delete
+	-DML command
+	-Delete a row
+	-Can be rollback
+	-slow as it scan data with where clause
+	-can use where clause
+Drop
+	-DDL
+	-Delete a table with its rows and schema
+	-Cannot be rollback
+Truncate
+	-DDL
+	-Delete a table with only rows. Schema is not lost
+	-Cannot be rollback
+	-faster as it does not scan data
+	-cannot use Where clause
+
+*Diff between JOIN and UNION
+=>The JOIN combines columns from two tables while the UNION combines rows from two queries.
+
+*ACID:
+=>
+Atomicity: each transaction should be atomic i.e if a transaction tries to update data in multiple tables then if success each table should be updated else all table should be rolled back.
+Consistency: Data should be sync in all the databases.
+Isolation: each transaction is isolated from one another. each update/insert operation should havppend one at a time.(locks at db level)
+Durability: Making the changes permanently even in case of failure
+
+*BASE: for NoSql datbase. different from rdbms acid consistency of data
+
+*Alias
+(as emp) is alias .Can be used with column name or table name
+
+*Diff between BETWEEN and IN clause
+BETWEEN defines a rance BETWEEN(10,50). All the number between 10 and 50
+IN defines only those values in (), IN(10,50). Only 10 and %) value is picked
+
+*Diff between WHERE and HAVING clause
+=>HAVING
+	-used only with SELECT query
+	-used to filter groups after grouping
+	-used after GROUP BY
+	-
+WHERE
+	-used with SELECT,UPDATE,DELETE query
+	-used to filter rows before grouping
+	-used before GROUP BY
+When used together, first WHERE is applied to each row then HAVING is applied to group
+		
+*Diff between PROCEDURE and FUNCTIONS
+=>PROCEDURE
+	-we can function inside procedure
+	-all DML queries can be used inside procedure
+	-we can handle exception
+FUNCTIONS
+	-we cannot call procedure inside function
+	-only slect query can be used inside function
+	-we cannot handle exception inside
+	
+TRANSACTION ISOLATION LEVEL
+	1.Read_Uncomitted
+		->If a transaction reads a data which is uncommited
+		->causes dirty reads,non-repeatable reads,phantom read
+		->no read/write/range lock
+	2.Read_Commited(default in oracle)
+		->implements only write lock,due to which cannot read until commited/rolledback
+		->prevents dirty read
+		->causes non-repeatable reads,phantom read
+	3.Repeatable_read
+		->prevents dirty read,non-repeatable read
+		->causes phantom read
+		->implements read/write lock
+	4.Serializable
+		->prevents dirty read,non-repeatable read,phantom read
+		->implements read/write/range lock
+		->prevents concurrent execution and is slow
+
+INDEX
+->*Index actually order/sort the column so that search becomes easy
+When a index is created on column say Id, it internally create a datastructure of Binary tree and order itself according to Id.
+Corresponding to Id its pointer to the actual row is stored.
+If search satisfy the column Id,it will use pointer to return all row data.
+This way search is very fast instead of searching all rows
+*Default index is created for primary key
+*For composite index i.e index on multi column,the values are concatenated together and sorted. However when searched only on one column will be slow due to entire table scan
+*we can create multiple index on same table.But only one index will be picked for searching
+*index costs up insert,update and delete because inserted value has to add entry in all indexes as well.First new value has to identify its node in B-tree and then insert itself
+*Yes it occupy space in memory,just like index of the book which occupy the pages and refer to the main chapters
+
+VIEW
+->*Virtual table
+*only filtered columns can be shown in view
+*view cannot be edited.only select query allowed
+*view can be built upon single table,multi table, other view
+*view occupy space in memory
+*change in underlying table is reflected on view
+*view uses indexes of underlying table
+*we can create index on view

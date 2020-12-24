@@ -1,0 +1,27 @@
+Generics:
+*Introduced in java 5
+*	What is Generics and its advantages?
+=>	Generics is used to provide type safety during compile time and removes the risk of ClassCastException during runtime.
+
+*	Type Erasure in Generics
+=>	Generics is implemented using Type Erasure. Compiler erases the datatype related information so that no type related information is available during runtime. For example List<String> is represented by only List at runtime. Formal type parameters e.g. <K, V> or <E> gets replaced by either Object or Super Class of the Type.
+This was introduced to provide preserving backward compatibility.
+
+*	Bounded vs unbounded wildcard
+=>	there are two kinds of Bounded wildcards 
+	1)<? extends T>	: Only subtype and itself is allowed	
+	2)<? super T>	: Only supertype and itself is allowed
+	<?> This is unbounded wildcard. We can use any type.
+	
+*	Difference between List<? extends T>  and  List <? super T>
+=>	List<? extends T>	: 	Any class which is subclass of T
+	List<? super T>		: 	Any class which is superclass of T
+	
+*	Array does not support generics
+*	Generics cannot be applied for primitive datatype
+
+
+
+
+
+

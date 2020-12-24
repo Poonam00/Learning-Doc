@@ -1,0 +1,18 @@
+		B
+	A		D
+pre-order=BAD	/_
+in-order(sorted)= ABD  /\
+post-order=ADB	_\
+
+Best way to implement stack is singly linked list not array as stack dont have a upper limit.It can grow to a large number.Array will result in stack overflow
+
+TREE:
+*If a tree have n Nodes then there will be (n-1) link/edges 
+*The root node cannot have parent node
+*lead node: node which does not have child node.
+*Depth of a node : no of link/edges of the node from root node 
+*Height of a node : no of link/edges of the node to the farthest leaf  node.
+*Depth of root node is 0
+*Balanced Tree: if any two sibling subtrees do not differ in height by more than one level. 
+*Unbalanced Tree:  if two sibling subtrees differ significantly(more than one) in height 
+*Balanced Tree are actually called binary(having only two child) Tree

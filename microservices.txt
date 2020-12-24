@@ -1,0 +1,27 @@
+Api gatway ,entry, select security,client id
+DTOncode
+docker swarm=kubernites clusterl
+docker compose=container orchestra.:operation of container
+
+dzone
+dev.2
+infoq
+
+2)composite key in hibernate
+3)best way of singleton:ENUM
+6)join through datajpa
+logs in microservice with spring cloud
+hibernate generatedby sequence, identity, table, auto
+https://www.vojtechruzicka.com/spring-boot-admin/#:~:text=Spring%20Boot%20Admin%20offers%20a,the%20cloud%20and%20with%20microservices.
+
+
+https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/
+
+1)cqrs pattern(separation of read and write service)
+2)database modelling
+3)api implementation and deployment of eventsourcing in microservices:(messaging service)
+SAGA==orcestration and choregraphy
+
+
+how to make read and write operation concurrent in microservice
+how to rollback changes made in db to dependendent services(orchestration and choreography SAGA pattern)

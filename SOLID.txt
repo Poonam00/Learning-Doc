@@ -1,0 +1,13 @@
+SOLID principles:
+
+[S]ingle Responsibility Principle
+[O]pen/Closed Principle
+[L]iskov Substitution Principle
+[I]nterface Segregation Principle
+[D]ependency Inversion Principle
+
+Single Responsibility principles(Separation of concerns)
+Open/Close principles(software entities (classes, modules, functions, etc.) should be open for extensions, but closed for modification.)
+Liskov Substitution priciples(whenever a parent is expected,child can be sent)
+Interface Segregation principles(Client should not be forced to use or override the method which it does not want to use. Create role interfaces)
+Depend on abtraction of loose coupling
