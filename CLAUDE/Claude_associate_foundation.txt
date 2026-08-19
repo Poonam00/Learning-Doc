@@ -1,0 +1,14 @@
+# Behavioral Properties of Claude
+1. Responses vary each time
+2. Confident tone is not a sign of accuracy
+3. Context is a budget
+4. Knowledge has a training boundary
+5. Configured workflows/procedures reduces output variance but does not eliminate it
+
+# Entry Point of Calude
+1. Chat: task starts and end within the session. Good for one-off question. Single use
+2. Project: Recurring work. Same knowledgeable each time
+3. Artifact: Creates standalone content that show up in separate panel next to chat like diagram, document, slide, spreadsheet etc 
+4. Research: available of paid plan. For deep analysis
+
+# Capability Layer
