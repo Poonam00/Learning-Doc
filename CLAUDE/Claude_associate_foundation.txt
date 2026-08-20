@@ -12,3 +12,15 @@
 4. Research: available of paid plan. For deep analysis
 
 # Capability Layer
+- Entry points determine where you work. The capability layer determines what Claude can do within that entry point.
+- The Four Layer Model:
+  1. Project:  backdrop knowledge as a context
+  2. Skill: defining workflow that handles repeated task
+  3. Code Execution: it should verify the computation to cause consistent output
+  4. Memory: relevant information carry forward across sessions
+- Each layer is independent. We can used any combination to get our work done.
+- SKILL: skills are reusable procedures. Built-in skill are also available. Lives at account level. For example: workflow for editing spreadsheet, word doc etc. Skill are used for repeatative task but each time it can produce varied result.
+- CODE EXECUTION: Code Execution is Claude's sandboxed computation environment. It could be provided by your patterned company as well. For the task were code-execution/computation is required, Claude up the sandbox and execute the code and return output. For example: any numeric calculation, output is some file, output is chart or diagram.
+- MEMORY: 
+
+
