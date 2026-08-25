@@ -20,7 +20,21 @@
   4. Memory: relevant information carry forward across sessions
 - Each layer is independent. We can used any combination to get our work done.
 - SKILL: skills are reusable procedures. Built-in skill are also available. Lives at account level. For example: workflow for editing spreadsheet, word doc etc. Skill are used for repeatative task but each time it can produce varied result.
-- CODE EXECUTION: Code Execution is Claude's sandboxed computation environment. It could be provided by your patterned company as well. For the task were code-execution/computation is required, Claude up the sandbox and execute the code and return output. For example: any numeric calculation, output is some file, output is chart or diagram.
-- MEMORY: 
+- CODE EXECUTION: Code Execution is Claude's sandboxed computation environment. It could be provided by your partnered company as well. For the task where code-execution/computation is required, Claude up the sandbox and execute the code and return output. For example: any numeric calculation, output is some file, output is chart or diagram.
+- MEMORY: memory retains work related facts across sessions. Memory not reviewed frequently can be misleading so it's important to curate it on regular basis. Incognito mode keeps session out of memory and chat history.
+
+# Choosing Models
+1. Haiku - speed and volume; use if variance if output is fine
+2. Sonnet - professional drafting;
+3. Opus - slow; complex; reasoning
+
+# Conversation Hygiene
+- each Claude conversation has finite working-memory limit. After this limit, the conversation is summarized and the old conversation is there in the history for reference but not in memory. Sometime when we chat for long duration, the Claude forget the initial instructions because of this
+- measures to take when this happens:
+  1. RESTART a new conversation
+  2. SUMMARIZE current conversation and paste in new chat
+  3. PERSIST the information that can be used in further session in the memory or the knowledge base
+- Memory Curation: Memory serves best when curated. Try to keep the memory upto-date.
+- Usage Limit: follow the above measures to stay within the limit, otherwise the task will remain incomplete.
 
 
