@@ -1,3 +1,5 @@
+MODULE 1: Claude and Model Foundation
+
 # Behavioral Properties of Claude
 1. Responses vary each time
 2. Confident tone is not a sign of accuracy
@@ -36,5 +38,47 @@
   3. PERSIST the information that can be used in further session in the memory or the knowledge base
 - Memory Curation: Memory serves best when curated. Try to keep the memory upto-date.
 - Usage Limit: follow the above measures to stay within the limit, otherwise the task will remain incomplete.
+
+
+MODULE 2: Prompting and Task Execution
+
+# 5 component of Prompt
+  1. Role : what role you want Claude to be for this task, an it guy, financial expert, etc
+  2. Context : what background you want Claude to have, what audience this output cater to
+  3. Task : Clear instruction such as Summarize, compare, draft, identify
+  4. Constraints : The boundaries like length, tone, what to include, what to exclude
+  5. Output Format : result format like table, bullet point, a draft email, paragraph
+Based on your task you can choose which all component you need
+Description/context: Providing Claude with the Access to files, inbox, diagrams etc.
+Weak Prompt: missing context gives  generic answer, unclear task instruction gives wrong output format, absent constraints provide wrong length or tone. 
+
+For Example: 
+WEAK PROMPYT:
+"Write a summary of our quarterly operations." 
+-> will give generic answer, not actually usable
+
+STRONG PROMPT:
+"You are an operations analyst (role). I am preparing a one-page update for our regional director, who cares about throughput and cost, not process detail (context and audience). Summarize the attached Q3 operations data (task), covering only the three metrics that moved more than 10 percent against target (constraint). Format as a short headline followed by three bullet points, each one sentence (output format)."
+->but if you provide an explicit prompt with all the 5 component provided, will give actual usable output. 
+
+# Task Decomposition
+- Splitting a large/multi-step problem statement into discrete, ordered steps, that can be run sequentially 
+- This helps when the flow of execution is needed for audit instead of direct response.
+- Also if any step fails in between, we can catch it and correct it
+- Keep sequential steps in one conversation so that each step can refer the prior result. If any step is independent use a new conversation or when the conversation has gone long and is degrading the output.
+
+# Iterating prompts to improve Output
+- this means, resending the prompt in a conversation which initial prompt missed
+- For example- Draft an email on so and so, the Claude draft the email, Next give a prompt to give a subject line.
+- Another example - Create a report of performance for a team, Claude give generic answer and we recognized we need result in which format, which team, so add those details.
+- Iterating the prompts is to accurate the output which is need further no action.
+- It basically means chatting to Claude and keep on giving relevant instruction to produce more accurate result.
+
+# Adapting Strategy to task type
+- the 5 component cannot be applied to all the kind of tasks
+- For Analysis:  give tight criteria, scope, what to measure, what standard to follow
+- For Research: give boundary, questions, access to web or not
+- For Drafting: give audience, tone, format
+- For Brainstorming: give goal and boundary, keep loose constraint, give freedom to explore and innovate
 
 
