@@ -82,3 +82,23 @@ STRONG PROMPT:
 - For Brainstorming: give goal and boundary, keep loose constraint, give freedom to explore and innovate
 
 
+MODULE 3: Evaluating and validating Claude output
+- Discernment: is the ability to judge people, things etc intelligently
+- Diligence: is doing the work thoroughly
+
+# Discernment: Evaluating Accuracy, Completeness and Fitness.
+- First evaluate the output against these 3 reference:
+  1. Requirement
+  2. Source material
+  3. Professional Standard
+- Second decide the depth of review based on Stakes involved. Higher the stake, deeper the review(like legal analysis, financial figures)
+- Third decide the state of output generated.
+  1. is it ready to use
+  2. does it need revision
+  3. does it need human override
+- Fourth check for completeness. whether the output is missing something. Its easier to detect wrong output rather than missing ones
+- 
+
+
+
+
