@@ -97,7 +97,20 @@ MODULE 3: Evaluating and validating Claude output
   2. does it need revision
   3. does it need human override
 - Fourth check for completeness. whether the output is missing something. Its easier to detect wrong output rather than missing ones
-- 
+
+# Hallucinations, Inconsistencies and Bias
+- Pattern of Hallucinations:
+  1. Plausible but unsupported claim: Plausible means looks correct, but does not match with the source
+  2. Fabricated specification: self made date, names, numbers etc
+  3. Confident tone masking uncertainty: even if Claude is not sure, it may never sound uncertain
+- Inconsistencies and Bias:
+  - in the same output Claude can contradict with its own claim/response. This generally happens in long output format
+  - If you prompt is inclined toward a preferred answer, Claude may lean towards it
+- Fact checking and Grounding Techniques
+  - its the technique implemented into the prompt to reduce hallucination and consistencies
+  - In prompt you can ask Claude to allow uncertainty so that in case of doubt it does not fabricate the data
+  - 
+
 
 
 
