@@ -109,7 +109,17 @@ MODULE 3: Evaluating and validating Claude output
 - Fact checking and Grounding Techniques
   - its the technique implemented into the prompt to reduce hallucination and consistencies
   - In prompt you can ask Claude to allow uncertainty so that in case of doubt it does not fabricate the data
-  - 
+  - In prompt you can ask Claude to refer only the source material provided
+  - In prompt you can ask Claude to back its claim, to show the source from where it extracted the output
+
+# Diligence: When Human Review Is Non-Negotiable
+- Diligence is knowing these 4 risk threshold in advance
+  1. Stake : What is the cost if the response goes wrong?
+  2. Reversibility : Can the action performed can be reverted?
+  3. Audience : Who are the audience you cater to?
+  4. Regulatory Exposure : Is there any rule, contract or law governing the content its referring?
+- you should be able to judge when iterating prompt is not needed anymore, what is needed a human based review
+
 
 
 
