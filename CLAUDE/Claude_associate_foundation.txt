@@ -120,6 +120,20 @@ MODULE 3: Evaluating and validating Claude output
   4. Regulatory Exposure : Is there any rule, contract or law governing the content its referring?
 - you should be able to judge when iterating prompt is not needed anymore, what is needed a human based review
 
+# Editing and adopting response for audience
+- There should be Clarity, Tone and Format to cater to the audience
+- Single output can cater to different kind of audiences by changing the above three criteria. For example, an detailed output can be shared with internal team, same output can be framed formally and crisp for business
+- If needed, generate as many draft as you want, don't just go for the very first one.
+
+# Choosing Output Format
+- 4 output format
+  1. Inline : for quick response we can get an inline response within the chat
+  2. Artifacts :  a separate panel where editable block of code/document is shown.
+  3. Structured Format: For data related output like table, schema, diagram etc
+  4. Code Execution: when the result needs to be deterministic rather than plausible use code execution
+
+
+
 
 
 
